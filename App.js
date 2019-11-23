@@ -7,16 +7,16 @@ import ReduxThunk from 'redux-thunk';
 
 import productsReducer from './store/reducers/products';
 import cartReducer from './store/reducers/cart';
-import ordersReducer from './store/reducers/order';
+import ordersReducer from './store/reducers/orders';
 import ShopNavigator from './navigation/ShopNavigator';
 
-const rootReduser = combineReducers({
+const rootReducer = combineReducers({
   products: productsReducer,
   cart: cartReducer,
   orders: ordersReducer
 });
 
-const store = createStore(rootReduser, applyMiddleware(ReduxThunk));
+const store = createStore(rootReducer, applyMiddleware(ReduxThunk));
 
 const fetchFonts = () => {
   return Font.loadAsync({
@@ -25,7 +25,7 @@ const fetchFonts = () => {
   });
 };
 
-export default function App(props) {
+export default function App() {
   const [fontLoaded, setFontLoaded] = useState(false);
 
   if (!fontLoaded) {
@@ -38,9 +38,9 @@ export default function App(props) {
       />
     );
   }
-
   return (
     <Provider store={store}>
-      <ShopNavigator/>
-    </Provider>)
- }
+      <ShopNavigator />
+    </Provider>
+  );
+}

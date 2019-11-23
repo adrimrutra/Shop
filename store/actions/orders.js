@@ -12,7 +12,7 @@ export const fetchOrders = () => {
 
       if (!response.ok) {
         throw new Error('Something went wrong!');
-      }     
+      }
 
       const resData = await response.json();
       const loadedOrders = [];
