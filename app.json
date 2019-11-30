@@ -6,16 +6,15 @@
     "sdkVersion": "35.0.0",
     "platforms": [
       "ios",
-      "android",
-      "web"
+      "android"
     ],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/places.png",
     "splash": {
-      "image": "./assets/images/splash.png",
+      "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#171717"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -24,7 +23,20 @@
       "**/*"
     ],
     "ios": {
+      "bundleIdentifier": "com.adrimrutra.shop",
+      "buildNumber":  "1.0.0",
       "supportsTablet": true
+    },
+    "android": {
+      "package": "com.adrimrutra.shop",
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/places-adaptive.png",
+        "backgroundColor": "#171717"
+      },
+      "permissions": [
+        "ACCESS_FINE_LOCATION"
+      ]
     }
   }
 }
